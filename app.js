@@ -13,12 +13,12 @@ const app = express();
 // });
 
 app.use("/", (req, res, next) => {
-  console.log("This function will be always called");
+  console.log("This function will be always called because next() is called in the next line");
   next();
 });
 
 app.use("/users", (req, res, next) => {
-  console.log("List of users on the html page");
+  console.log("This function will be called whenever its path is matched & after matching the path it will be exited from the function and won't go to any other path");
   res.send("<h1>List of users</h1><ul><li>User 1</li><li>User 2</li></ul>");
 });
 
